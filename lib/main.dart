@@ -14,7 +14,7 @@ class Ecommerce extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoarding(),
+      home: OnBoardingPages(),
     );
   }
 }
