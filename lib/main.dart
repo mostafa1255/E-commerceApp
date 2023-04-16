@@ -1,18 +1,19 @@
 import 'package:ecommerce/view/Screen/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Ecommerce());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Ecommerce extends StatelessWidget {
+  const Ecommerce({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return const GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       home: OnBoarding(),
     );
   }
