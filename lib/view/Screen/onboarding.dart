@@ -1,9 +1,7 @@
-import 'package:ecommerce/core/constant/App_Colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-
-import '../../data/datasource/Static/static.dart';
+import '../Widget/OnBoarding/Custom_Slider.dart';
+import '../Widget/OnBoarding/Custom_button.dart';
+import '../Widget/OnBoarding/dotcontroller.dart';
 
 class OnBoardingPages extends StatelessWidget {
   const OnBoardingPages({super.key});
@@ -12,39 +10,27 @@ class OnBoardingPages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: PageView.builder(
-        itemCount: OnBoardingList.length,
-        itemBuilder: (context, index) {
-          return Column(
-            children: [
-              Text(
-                OnBoardingList[index].title!,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              ),
-              const SizedBox(
-                height: 85,
-              ),
-              Image.asset(
-                OnBoardingList[index].image!,
-                width: 200,
-                height: 250,
-                fit: BoxFit.fill,
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              Container(
-                width: double.infinity,
-                alignment: Alignment.center,
-                child: Text(
-                  OnBoardingList[index].body!,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(height: 1.5, color: AppColor.grey),
-                ),
-              ),
-            ],
-          );
-        },
+      child: Column(
+        children: [
+          const Expanded(
+            flex: 2,
+            child: CustomSlider(),
+          ),
+          Expanded(
+              flex: 1,
+              child: Column(
+                children: const [
+                  DotController(),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  SizedBox(
+                    height: 100,
+                  ),
+                  CustomButton(),
+                ],
+              ))
+        ],
       ),
     ));
   }
