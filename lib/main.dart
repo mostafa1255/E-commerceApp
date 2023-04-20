@@ -1,3 +1,4 @@
+import 'package:ecommerce/routes.dart';
 import 'package:ecommerce/view/Screen/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,9 +13,10 @@ class Ecommerce extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoardingPages(),
+      routes: route,
+      home: const OnBoardingPages(),
     );
   }
 }
